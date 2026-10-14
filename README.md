@@ -8,7 +8,7 @@ A responsive, theme-aware Home Assistant Lovelace card for one configurable `swi
 - Sends `switch.turn_on` or `switch.turn_off` based on the last reported entity state
 - English power button with pending, success, and service-error feedback
 - Optional title and icon overrides
-- Optional live power (W) and energy (kWh) readings from sensor entities
+- Optional live power, energy, and voltage readings from sensor entities
 - `aurora`, `ocean`, `sunset`, and `lavender` accent palettes
 - Responsive layout and long-press More Info
 - HACS compatible; no external runtime dependencies
@@ -29,9 +29,10 @@ palette: aurora
 # Optional; select these in the card editor when the switch exposes them
 power_entity: sensor.your_switch_power
 energy_entity: sensor.your_switch_energy
+voltage_entity: sensor.your_switch_voltage
 ```
 
-Power and energy readings are optional. In the card editor, select the matching Home Assistant sensor entities; each reading appears only when configured. Units are taken from each sensor's `unit_of_measurement`, so other units are shown as provided by Home Assistant. Switches without consumption sensors keep the existing compact layout.
+Power, energy, and voltage readings are optional. In the card editor, select the matching Home Assistant sensor entities; each reading appears only when configured. Units are taken from each sensor's `unit_of_measurement` (commonly W, kWh, and V). Switches without monitoring sensors keep the existing compact layout.
 
 ## Configuration
 
@@ -42,6 +43,7 @@ Power and energy readings are optional. In the card editor, select the matching 
 | `icon` | No | Optional Material Design Icon override |
 | `power_entity` | No | Sensor for instantaneous power (commonly W) |
 | `energy_entity` | No | Sensor for cumulative energy (commonly kWh) |
+| `voltage_entity` | No | Sensor for voltage (commonly V) |
 | `palette` | No | `aurora`, `ocean`, `sunset`, or `lavender` (default: `aurora`) |
 
 Switches are stateful entities, so the card reflects the entity's reported state; it does not infer an on/off state from an action timestamp.

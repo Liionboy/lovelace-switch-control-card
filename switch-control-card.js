@@ -48,6 +48,7 @@ class SwitchControlCard extends HTMLElement {
       { name: "icon", selector: { icon: {} } },
       { name: "power_entity", selector: { entity: { domain: ["sensor"] } } },
       { name: "energy_entity", selector: { entity: { domain: ["sensor"] } } },
+      { name: "voltage_entity", selector: { entity: { domain: ["sensor"] } } },
       { name: "palette", selector: { select: { options: ["aurora", "ocean", "sunset", "lavender"], mode: "dropdown" } } },
     ] };
   }
@@ -60,7 +61,7 @@ class SwitchControlCard extends HTMLElement {
 
   set hass(value) {
     this._hass = value;
-    const signature = JSON.stringify([this._state(), this._sensorState(this._config.power_entity), this._sensorState(this._config.energy_entity)]);
+    const signature = JSON.stringify([this._state(), this._sensorState(this._config.power_entity), this._sensorState(this._config.energy_entity), this._sensorState(this._config.voltage_entity)]);
     if (signature !== this._entitySignature) {
       this._entitySignature = signature;
       this._render();
@@ -152,9 +153,11 @@ class SwitchControlCard extends HTMLElement {
     const icon = this._config.icon || state.attributes?.icon || "mdi:toggle-switch";
     const powerState = this._sensorState(this._config.power_entity);
     const energyState = this._sensorState(this._config.energy_entity);
+    const voltageState = this._sensorState(this._config.voltage_entity);
     const consumption = [
       this._config.power_entity && { label: "Power", icon: "mdi:flash-outline", state: powerState },
       this._config.energy_entity && { label: "Energy", icon: "mdi:lightning-bolt-outline", state: energyState },
+      this._config.voltage_entity && { label: "Voltage", icon: "mdi:sine-wave", state: voltageState },
     ].filter(Boolean);
     const consumptionHtml = consumption.length ? `<section class="consumption" aria-label="Power consumption">${consumption.map((item) => `<div class="reading"><ha-icon icon="${item.icon}"></ha-icon><div class="reading-copy"><div class="reading-label">${item.label}</div><div class="reading-value">${escapeHtml(this._formatSensor(item.state))}</div></div></div>`).join("")}</section>` : "";
     this.shadowRoot.innerHTML = `
