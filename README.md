@@ -6,6 +6,7 @@ A responsive, theme-aware Home Assistant Lovelace card for one configurable `swi
 
 - Shows the switch's actual `on`, `off`, or unavailable state
 - Sends `switch.turn_on` or `switch.turn_off` based on the last reported entity state
+- English power button with pending, success, and service-error feedback
 - Optional title and icon overrides
 - `aurora`, `ocean`, `sunset`, and `lavender` accent palettes
 - Responsive layout and long-press More Info

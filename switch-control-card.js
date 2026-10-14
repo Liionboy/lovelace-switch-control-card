@@ -12,7 +12,7 @@ const STYLE = `
   .shell:before{position:absolute;top:0;right:22px;left:22px;height:3px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));content:""}
   .header{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}.identity{display:flex;align-items:center;gap:12px;min-width:0}.icon-wrap{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;border:1px solid color-mix(in srgb,var(--accent) 24%,transparent);border-radius:17px;background:linear-gradient(145deg,var(--accent),var(--accent2));box-shadow:0 7px 18px color-mix(in srgb,var(--accent) 22%,transparent);color:#fff}.icon-wrap ha-icon{--mdc-icon-size:25px}.identity-copy{min-width:0}.eyebrow{color:var(--accent);font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.title{overflow:hidden;margin:3px 0 0;font-size:clamp(16px,2.5cqi,20px);font-weight:780;letter-spacing:-.03em;text-overflow:ellipsis;white-space:nowrap}
   .pill{display:flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid color-mix(in srgb,currentColor 12%,transparent);border-radius:999px;background:color-mix(in srgb,currentColor 8%,var(--card-background-color,#fff));color:var(--secondary-text-color);font-size:11px;font-weight:750;white-space:nowrap}.dot{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 16%,transparent)}.pill.on{color:var(--success-color,#168b68)}.pill.off{color:var(--secondary-text-color)}.pill.unavailable{color:var(--error-color,#c74343)}
-  .panel{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:15px;margin-top:20px;padding:16px;border:1px solid color-mix(in srgb,var(--accent) 18%,var(--divider-color));border-radius:19px;background:linear-gradient(125deg,color-mix(in srgb,var(--accent) 9%,var(--card-background-color,#fff)),color-mix(in srgb,var(--accent2) 5%,var(--card-background-color,#fff)) 62%,var(--card-background-color,#fff))}.copy{display:flex;align-items:center;gap:11px;min-width:0}.state-icon{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:13px;background:color-mix(in srgb,var(--accent) 12%,var(--card-background-color,#fff));color:var(--accent)}.state-icon ha-icon{--mdc-icon-size:21px}.state-icon.on{background:linear-gradient(145deg,var(--accent),var(--accent2));color:#fff}.state-copy{min-width:0}.state-label{color:var(--secondary-text-color);font-size:10px;font-weight:760;letter-spacing:.1em;text-transform:uppercase}.state-value{overflow:hidden;margin-top:3px;font-size:18px;font-weight:820;letter-spacing:-.035em;text-overflow:ellipsis;white-space:nowrap}.toggle{display:flex;align-items:center;justify-content:center;gap:7px;min-width:106px;min-height:42px;padding:0 13px;border:0;border-radius:14px;background:linear-gradient(120deg,var(--accent),var(--accent2));box-shadow:0 6px 15px color-mix(in srgb,var(--accent) 23%,transparent);color:#fff;font:inherit;font-size:12px;font-weight:780;cursor:pointer;transition:filter .16s ease,transform .16s ease}.toggle:hover{filter:brightness(1.07);transform:translateY(-1px)}.toggle:active{transform:scale(.98)}.toggle:disabled{opacity:.55;cursor:not-allowed;filter:grayscale(.6)}.toggle ha-icon{--mdc-icon-size:18px}.hint{margin:12px 2px 0;color:var(--secondary-text-color);font-size:10px;line-height:1.4}
+  .panel{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:15px;margin-top:20px;padding:16px;border:1px solid color-mix(in srgb,var(--accent) 18%,var(--divider-color));border-radius:19px;background:linear-gradient(125deg,color-mix(in srgb,var(--accent) 9%,var(--card-background-color,#fff)),color-mix(in srgb,var(--accent2) 5%,var(--card-background-color,#fff)) 62%,var(--card-background-color,#fff))}.copy{display:flex;align-items:center;gap:11px;min-width:0}.state-icon{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:13px;background:color-mix(in srgb,var(--accent) 12%,var(--card-background-color,#fff));color:var(--accent)}.state-icon ha-icon{--mdc-icon-size:21px}.state-icon.on{background:linear-gradient(145deg,var(--accent),var(--accent2));color:#fff}.state-copy{min-width:0}.state-label{color:var(--secondary-text-color);font-size:10px;font-weight:760;letter-spacing:.1em;text-transform:uppercase}.state-value{overflow:hidden;margin-top:3px;font-size:18px;font-weight:820;letter-spacing:-.035em;text-overflow:ellipsis;white-space:nowrap}.toggle{display:flex;align-items:center;justify-content:center;gap:7px;min-width:106px;min-height:42px;padding:0 13px;border:0;border-radius:14px;background:linear-gradient(120deg,var(--accent),var(--accent2));box-shadow:0 6px 15px color-mix(in srgb,var(--accent) 23%,transparent);color:#fff;font:inherit;font-size:12px;font-weight:780;cursor:pointer;transition:filter .16s ease,transform .16s ease}.toggle:hover:not(:disabled){filter:brightness(1.07);transform:translateY(-1px)}.toggle:active:not(:disabled){transform:scale(.98)}.toggle:disabled{opacity:.55;cursor:wait;filter:grayscale(.6)}.toggle ha-icon{--mdc-icon-size:18px}.hint{margin:12px 2px 0;color:var(--secondary-text-color);font-size:10px;line-height:1.4}.hint.error{color:var(--error-color,#c74343)}
   @container switch-card (max-width:480px){.shell{padding:15px}.identity{gap:9px}.icon-wrap{flex-basis:40px;width:40px;height:40px;border-radius:14px}.icon-wrap ha-icon{--mdc-icon-size:22px}.pill{gap:5px;padding:6px 8px;font-size:10px}.panel{gap:9px;margin-top:15px;padding:12px;border-radius:16px}.copy{gap:8px}.state-icon{width:34px;height:34px;border-radius:12px}.state-value{font-size:16px}.toggle{min-width:90px;min-height:39px;padding:0 10px}}
   @container switch-card (max-width:360px){.shell{padding:12px}.header{gap:7px}.identity{gap:7px}.icon-wrap{flex-basis:36px;width:36px;height:36px}.title{font-size:15px}.pill{padding:5px 7px;font-size:9px}.panel{gap:6px;padding:10px}.copy{gap:6px}.state-icon{width:30px;height:30px}.state-value{font-size:14px}.toggle{min-width:76px;padding:0 7px;font-size:11px}}
   @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
@@ -38,7 +38,6 @@ class SwitchControlCard extends HTMLElement {
     this.addEventListener("pointercancel", () => this._onPointerEnd());
     this.addEventListener("pointerleave", () => this._onPointerEnd());
     this.addEventListener("contextmenu", (event) => this._onContextMenu(event));
-    this.shadowRoot.addEventListener("click", (event) => this._onClick(event));
   }
 
   static getConfigForm() {
@@ -56,17 +55,49 @@ class SwitchControlCard extends HTMLElement {
     this._render();
   }
 
-  set hass(value) { this._hass = value; this._render(); }
+  set hass(value) {
+    this._hass = value;
+    const state = this._state();
+    const signature = state ? JSON.stringify(state) : "missing";
+    if (signature !== this._entitySignature) {
+      this._entitySignature = signature;
+      this._render();
+    }
+  }
   get hass() { return this._hass; }
 
   _state() { return this._hass?.states?.[this._config.entity]; }
 
-  _onClick(event) {
-    const button = event.composedPath().find((node) => node instanceof HTMLElement && node.dataset?.action === "toggle");
-    if (!button) return;
+  async _toggle() {
+    if (this._pending) return;
     const state = this._state();
     if (!state || !["on", "off"].includes(state.state)) return;
-    this._hass.callService("switch", state.state === "on" ? "turn_off" : "turn_on", { entity_id: this._config.entity });
+    if (!this._hass?.callService) {
+      this._feedback = "Home Assistant is not ready.";
+      this._error = true;
+      this._render();
+      return;
+    }
+    clearTimeout(this._feedbackTimer);
+    this._pending = true;
+    this._feedback = "Sending command…";
+    this._error = false;
+    this._render();
+    try {
+      await this._hass.callService("switch", state.state === "on" ? "turn_off" : "turn_on", { entity_id: this._config.entity });
+      this._feedback = "Command sent";
+      this._error = false;
+      clearTimeout(this._feedbackTimer);
+      this._feedbackTimer = setTimeout(() => { this._feedback = ""; this._render(); }, 1800);
+    } catch (error) {
+      this._feedback = error?.message || "Home Assistant could not send the command.";
+      this._error = true;
+      clearTimeout(this._feedbackTimer);
+      this._feedbackTimer = setTimeout(() => { this._feedback = ""; this._error = false; this._render(); }, 5000);
+    } finally {
+      this._pending = false;
+      this._render();
+    }
   }
 
   _onPointerDown(event) {
@@ -103,7 +134,7 @@ class SwitchControlCard extends HTMLElement {
     }
     const unavailable = ["unknown", "unavailable"].includes(state.state);
     const isOn = state.state === "on";
-    const label = unavailable ? "Indisponibil" : isOn ? "Pornit" : "Oprit";
+    const label = unavailable ? "Unavailable" : isOn ? "On" : "Off";
     const title = this._config.title || state.attributes?.friendly_name || "Switch";
     const icon = this._config.icon || state.attributes?.icon || "mdi:toggle-switch";
     this.shadowRoot.innerHTML = `
@@ -115,11 +146,13 @@ class SwitchControlCard extends HTMLElement {
             <div class="pill ${unavailable ? "unavailable" : isOn ? "on" : "off"}"><span class="dot"></span>${label}</div>
           </header>
           <section class="panel">
-            <div class="copy"><div class="state-icon ${isOn ? "on" : ""}"><ha-icon icon="${isOn ? "mdi:toggle-switch" : "mdi:toggle-switch-off-outline"}"></ha-icon></div><div class="state-copy"><div class="state-label">Stare</div><div class="state-value">${label}</div></div></div>
-            <button class="toggle" type="button" data-action="toggle" aria-label="${isOn ? "Oprește" : "Pornește"} ${escapeHtml(title)}" ${unavailable ? "disabled" : ""}><ha-icon icon="mdi:power"></ha-icon><span>${isOn ? "Oprește" : "Pornește"}</span></button>
+            <div class="copy"><div class="state-icon ${isOn ? "on" : ""}"><ha-icon icon="${isOn ? "mdi:toggle-switch" : "mdi:toggle-switch-off-outline"}"></ha-icon></div><div class="state-copy"><div class="state-label">State</div><div class="state-value">${label}</div></div></div>
+            <button class="toggle" type="button" data-action="toggle" aria-label="${isOn ? "Turn off" : "Turn on"} ${escapeHtml(title)}" ${unavailable || this._pending ? "disabled" : ""}><ha-icon icon="mdi:power"></ha-icon><span>${this._pending ? "Sending…" : isOn ? "Turn off" : "Turn on"}</span></button>
           </section>
+          ${this._feedback ? `<p class="hint ${this._error ? "error" : ""}" role="status">${escapeHtml(this._feedback)}</p>` : ""}
         </div>
       </ha-card>`;
+    this.shadowRoot.querySelector('[data-action="toggle"]')?.addEventListener("click", () => this._toggle());
   }
 }
 
